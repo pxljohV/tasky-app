@@ -76,7 +76,7 @@ export default function Main() {
               )
             }}>Yes</button>
             <button className="pa2 w-30 bg-red b--none glow pointer grow" onClick={(e) => {
-              warning.current.classList.add("dn")
+              warning.current.classList.add("dn" )
             }}>Cancel</button>
           </div>
         </div>
