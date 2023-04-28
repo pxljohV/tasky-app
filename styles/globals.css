@@ -1,0 +1,23 @@
+body{
+  background-color: rgb(24, 6, 58);
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+.nunito{
+  font-family: 'Nunito', sans-serif;
+}
+.close{
+  margin-top:-50px;
+  transition: 2s;
+}
+.open{
+  margin-top: 20px;
+  transition: 1s;
+}
+
+.glowy:hover{
+  background-color: rgb(38, 15, 83);
+  transition: 0.5s;
+}
+.purply{
+  background-color: rgb(33, 10, 75)
+}
