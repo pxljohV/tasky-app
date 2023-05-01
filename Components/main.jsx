@@ -30,7 +30,7 @@ export default function Main() {
   }
   function getValues() {
     //get values from local
-    const currentValues = localStorage.getItem("list");
+    const currentValues = window.localStorage.getItem("list");
     //console.log(currentValues);
     setList((arr) => JSON.parse(currentValues));
     openMenu.current.classList.remove("open")
@@ -38,7 +38,7 @@ export default function Main() {
   }
   function saveLocal() {
     //saves complete array from list to local
-    localStorage.setItem("list", JSON.stringify(list));
+    window.localStorage.setItem("list", JSON.stringify(list));
     save.current.classList.add("bg-green", "white");
     save.current.innerText = "SAVED ✔";
     openMenu.current.classList.remove("open");
@@ -76,7 +76,7 @@ export default function Main() {
               )
             }}>Yes</button>
             <button className="pa2 w-30 bg-red b--none glow pointer grow" onClick={(e) => {
-              warning.current.classList.add("dn" )
+              warning.current.classList.add("dn")
             }}>Cancel</button>
           </div>
         </div>
@@ -101,11 +101,15 @@ export default function Main() {
             className="pa2 ml4  pointer blackpointer bb f7 w-50 br2 b--none"
             ref={save}
             onClick={() => {
-              const currentValues = localStorage.getItem("list");
-              if (currentValues.length > 2) {
-                showWarning()
-              } else saveLocal()
-            }
+              const currentValues = window.localStorage.getItem("list");
+              
+              if (currentValues === null || currentValues.length === 2) {
+                saveLocal()
+              }
+              if (currentValues.length >2 ) {
+                  showWarning()
+                }
+              }
             }
           >
             SAVE
