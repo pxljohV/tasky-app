@@ -1,4 +1,4 @@
-<h1>Task app<h1>
+<h1>Task app</h1>
   <p> Made with Nodejs and Tachyons for styling </p>
   
   <h3>Features</h3>
